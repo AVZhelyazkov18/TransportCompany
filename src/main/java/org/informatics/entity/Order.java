@@ -44,7 +44,6 @@ public class Order extends BaseEntity {
     @JoinColumn(name = "driver_id")
     private Driver driver;
 
-    @Column(nullable = false)
     private Double amount;
 
     private boolean isPaid;

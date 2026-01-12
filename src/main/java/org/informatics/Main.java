@@ -26,14 +26,16 @@ public class Main {
             WorkerDao workerDao = new WorkerDaoImpl(manager);
             VehicleDao vehicleDao = new VehicleDaoImpl(manager);
             OrderDao orderDao = new OrderDaoImpl(manager);
+            DriverDao driverDao = new DriverDaoImpl(manager);
 
             context = new ApplicationContext(
                     new ClientService(clientDao),
-                    new OrderService(orderDao, clientDao),
+                    new OrderService(orderDao, clientDao, driverDao),
                     new WorkerService(workerDao),
                     new VehicleService(vehicleDao),
                     new CompanyService(companyDao),
-                    new AuthService()
+                    new AuthService(),
+                    new DriverService(driverDao)
             );
 
             if (!context.getCompanyService().companyExists()) {

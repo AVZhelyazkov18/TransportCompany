@@ -4,6 +4,7 @@ import org.informatics.entity.Order;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Map;
 
 public interface OrderDao extends BaseDao<Order, Long> {
@@ -12,4 +13,5 @@ public interface OrderDao extends BaseDao<Order, Long> {
     BigDecimal sumRevenueForPeriod(LocalDate from, LocalDate to);
     BigDecimal sumTotalRevenue();
     long countAllCompleted();
+    List<Order> findAllPendingApproval();
 }

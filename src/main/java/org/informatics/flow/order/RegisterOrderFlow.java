@@ -42,10 +42,10 @@ public class RegisterOrderFlow implements Flow {
             if (transportType == TransportType.CARGO) {
                 System.out.print("Cargo weight: ");
                 cargoWeight = Double.parseDouble(scanner.nextLine().trim());
+            } else if(transportType == TransportType.PASSENGERS) {
+                System.out.println("Amount of passengers: ");
+                cargoWeight = (double)Integer.parseInt(scanner.nextLine().trim());
             }
-
-            System.out.print("Would you like to pay now? (Y/N): ");
-            boolean paid = scanner.nextLine().trim().charAt(0) == 'Y';
 
             OrderDto dto = new OrderDto(
                     Long.parseLong(clientId),
@@ -54,8 +54,7 @@ public class RegisterOrderFlow implements Flow {
                     departure,
                     arrival,
                     transportType,
-                    cargoWeight,
-                    paid
+                    cargoWeight
             );
 
             context.getOrderService().registerOrder(dto, context);

@@ -11,7 +11,6 @@ public class CreateVehicleFlow implements Flow {
 
     @Override
     public void execute(Scanner scanner, ApplicationContext context) {
-
         System.out.print("Vehicle type: ");
         VehicleType type = VehicleType.valueOf(scanner.nextLine().trim().toUpperCase());
 
@@ -22,6 +21,6 @@ public class CreateVehicleFlow implements Flow {
 
         context.getVehicleService().createVehicle(context, dto);
 
-        System.out.println("Vehicle created");
+        System.out.println("Vehicle created.");
     }
 }

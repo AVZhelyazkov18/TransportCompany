@@ -101,7 +101,6 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public Map<Long, BigDecimal> sumRevenuePerDriverForPeriod(LocalDate from, LocalDate to) {
-
         List<Object[]> results = em.createQuery(
                         """
                         SELECT o.driver.id, SUM(o.price) FROM Order o
@@ -120,5 +119,13 @@ public class OrderDaoImpl implements OrderDao {
             map.put((Long) row[0], (BigDecimal) row[1]);
         }
         return map;
+    }
+
+    @Override
+    public List<Order> findAllPendingApproval() {
+        return em.createQuery(
+                "FROM Order o WHERE o.approver IS NULL",
+                Order.class
+        ).getResultList();
     }
 }

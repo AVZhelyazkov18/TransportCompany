@@ -3,6 +3,7 @@ package org.informatics.flow;
 import org.informatics.context.ApplicationContext;
 import org.informatics.exceptions.InvalidOptionException;
 import org.informatics.flow.client.RegisterClientFlow;
+import org.informatics.flow.order.PaymentOrderFlow;
 import org.informatics.flow.order.RegisterOrderFlow;
 import org.informatics.flow.worker.LoginWorkerFlow;
 import org.informatics.ui_utils.MenuController;
@@ -17,7 +18,8 @@ public class MainMenuFlow implements Flow{
         List<MenuOption> mainMenuOptions = List.of(
                 new MenuOption(1, "Register client"),
                 new MenuOption(2, "Register order"),
-                new MenuOption(3, "Login as worker"),
+                new MenuOption(3, "Pay for order"),
+                new MenuOption(4, "Login as worker"),
                 new MenuOption(0, "Exit")
         );
 
@@ -30,7 +32,8 @@ public class MainMenuFlow implements Flow{
                 switch (option.getCode()) {
                     case 1 -> new RegisterClientFlow(context.getClientService()).execute(scanner, context);
                     case 2 -> new RegisterOrderFlow().execute(scanner, context);
-                    case 3 -> new LoginWorkerFlow().execute(scanner, context);
+                    case 3 -> new PaymentOrderFlow().execute(scanner, context);
+                    case 4 -> new LoginWorkerFlow().execute(scanner, context);
                     case 0 -> System.out.println("Exiting application.");
                 }
             } catch (InvalidOptionException e) {

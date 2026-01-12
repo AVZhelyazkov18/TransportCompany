@@ -12,6 +12,7 @@ public class ApplicationContext {
     private final VehicleService vehicleService;
     private final CompanyService companyService;
     private final AuthService authService;
+    private final DriverService driverService;
 
     public ApplicationContext(
             ClientService clientService,
@@ -19,7 +20,8 @@ public class ApplicationContext {
             WorkerService workerService,
             VehicleService vehicleService,
             CompanyService companyService,
-            AuthService authService
+            AuthService authService,
+            DriverService driverService
     ) {
         this.clientService = clientService;
         this.orderService = orderService;
@@ -27,5 +29,6 @@ public class ApplicationContext {
         this.vehicleService = vehicleService;
         this.companyService = companyService;
         this.authService = authService;
+        this.driverService = driverService;
     }
 }

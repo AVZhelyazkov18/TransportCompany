@@ -8,7 +8,6 @@ import org.informatics.exceptions.OwnerExistsException;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
@@ -76,17 +75,6 @@ public class CompanyService {
             writer.newLine();
 
             for (var entry : context.getOrderService().getTransportsPerDriver().entrySet()) {
-                String name = context.getWorkerService().getWorkerDisplayName(entry.getKey());
-
-                writer.write(name + " -> " + entry.getValue());
-                writer.newLine();
-            }
-
-            writer.newLine();
-            writer.write("Revenue per driver for period:");
-            writer.newLine();
-
-            for (var entry : context.getOrderService().getRevenuePerDriverForPeriod(from, to).entrySet()) {
                 String name = context.getWorkerService().getWorkerDisplayName(entry.getKey());
 
                 writer.write(name + " -> " + entry.getValue());

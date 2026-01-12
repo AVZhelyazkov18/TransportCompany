@@ -16,5 +16,4 @@ public class OrderDto {
     final private LocalDate dateOfArrival;
     final private TransportType transportType;
     final private Double cargoWeight;
-    final private boolean paid;
 }

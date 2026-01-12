@@ -6,7 +6,7 @@ import jakarta.persistence.Persistence;
 import org.informatics.context.ApplicationContext;
 import org.informatics.dao.*;
 import org.informatics.dao.implementation.*;
-import org.informatics.flow.CreateCompanyFlow;
+import org.informatics.flow.company.CreateCompanyFlow;
 import org.informatics.flow.Flow;
 import org.informatics.flow.MainMenuFlow;
 import org.informatics.service.*;
@@ -31,7 +31,7 @@ public class Main {
                     new ClientService(clientDao),
                     new OrderService(orderDao, clientDao),
                     new WorkerService(workerDao),
-                    new VehicleService(),
+                    new VehicleService(vehicleDao),
                     new CompanyService(companyDao),
                     new AuthService()
             );

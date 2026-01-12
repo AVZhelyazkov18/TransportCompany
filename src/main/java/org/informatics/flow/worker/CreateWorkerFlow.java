@@ -1,10 +1,11 @@
-package org.informatics.flow;
+package org.informatics.flow.worker;
 
 import org.informatics.context.ApplicationContext;
 
 import java.math.BigDecimal;
 import java.util.Scanner;
 import org.informatics.dto.WorkerDto;
+import org.informatics.flow.Flow;
 
 public class CreateWorkerFlow implements Flow {
 

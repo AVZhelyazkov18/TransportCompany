@@ -1,4 +1,4 @@
-package org.informatics.flow;
+package org.informatics.flow.company;
 
 import org.informatics.context.ApplicationContext;
 import org.informatics.dto.CompanyDto;

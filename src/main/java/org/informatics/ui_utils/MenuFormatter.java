@@ -1,4 +1,4 @@
-package org.informatics.ui;
+package org.informatics.ui_utils;
 
 import java.util.List;
 

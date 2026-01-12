@@ -1,6 +1,7 @@
-package org.informatics.flow;
+package org.informatics.flow.company;
 
 import org.informatics.context.ApplicationContext;
+import org.informatics.flow.Flow;
 
 import java.time.LocalDate;
 import java.util.Scanner;

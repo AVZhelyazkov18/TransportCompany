@@ -1,7 +1,9 @@
-package org.informatics.dao;
+package org.informatics.dao.implementation;
 
 import jakarta.persistence.EntityManager;
 import java.util.List;
+
+import org.informatics.dao.CompanyDao;
 import org.informatics.entity.Company;
 
 public class CompanyDaoImpl implements CompanyDao {
@@ -40,5 +42,10 @@ public class CompanyDaoImpl implements CompanyDao {
         em.getTransaction().begin();
         em.remove(em.contains(entity) ? entity : em.merge(entity));
         em.getTransaction().commit();
+    }
+
+    @Override
+    public Long count() {
+        return em.createQuery("SELECT COUNT(c) FROM Company c", Long.class).getSingleResult();
     }
 }

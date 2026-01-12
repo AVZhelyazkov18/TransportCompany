@@ -1,4 +1,8 @@
-package org.informatics.dao.implementation;
+package org.informatics.dao;
 
-public interface DriverDao {
-}
+import org.informatics.entity.Driver;
+
+import java.util.List;
+
+public interface DriverDao extends BaseDao<Driver, Long>{}
+

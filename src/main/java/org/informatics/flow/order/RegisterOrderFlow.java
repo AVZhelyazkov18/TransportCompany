@@ -1,4 +1,4 @@
-package org.informatics.flow;
+package org.informatics.flow.order;
 
 import org.informatics.context.ApplicationContext;
 import org.informatics.dto.OrderDto;
@@ -6,6 +6,7 @@ import org.informatics.enums.TransportType;
 import org.informatics.exceptions.IllegalCargoException;
 import org.informatics.exceptions.InvalidClientException;
 import org.informatics.exceptions.RequiredCargoException;
+import org.informatics.flow.Flow;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;

@@ -1,7 +1,9 @@
-package org.informatics.flow;
+package org.informatics.flow.worker;
 
 import org.informatics.context.ApplicationContext;
 import org.informatics.exceptions.InvalidWorkerException;
+import org.informatics.flow.Flow;
+import org.informatics.flow.WorkerMenuFlow;
 
 import java.util.Scanner;
 

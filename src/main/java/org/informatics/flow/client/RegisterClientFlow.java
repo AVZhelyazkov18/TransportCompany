@@ -1,8 +1,9 @@
-package org.informatics.flow;
+package org.informatics.flow.client;
 
 import org.informatics.context.ApplicationContext;
 import org.informatics.dto.ClientDto;
 import org.informatics.exceptions.EmailAlreadyExistException;
+import org.informatics.flow.Flow;
 import org.informatics.service.ClientService;
 
 import java.util.Scanner;

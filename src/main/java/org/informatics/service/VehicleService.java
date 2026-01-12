@@ -36,4 +36,3 @@ public class VehicleService {
         return vehicleDao.findAll();
     }
 }
-
